@@ -12,14 +12,14 @@ def register(request):
             last_name=form.cleaned_data['last_name']
             phone_number=form.cleaned_data['phone_number']
             email=form.cleaned_data['email']
-            passowrd=form.cleaned_data['password']
+            password=form.cleaned_data['password']
             username = email.split('@')[0]
 
             user = Account.objects.create_user(
                 first_name=first_name,
                 last_name=last_name,
                 email=email,
-                passowrd=passowrd,
+                password=password,
                 username=username
             )
             user.phone_number = phone_number
@@ -31,7 +31,7 @@ def register(request):
     context ={
         'form':form
     }
-    return render(request,'account/register.html',context )
+    return render(request,'account/register.html',context)
 
 def login(request):
     return  HttpResponse("login")

@@ -3,7 +3,7 @@ from . models import Account
 
 class RegistrationForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Enter password','class':'from-control'}))
-    confrim_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Confrim password','class':'from-control'}))
+    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Confrim password','class':'from-control'}))
 
     class Meta:
         model = Account
